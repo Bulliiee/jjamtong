@@ -3,6 +3,8 @@
 
 ***Project description*** : This project is a garbage can that replaces recycling. When garbage is put in, whether it is cans, plastic, or regular garbage is separated through the camera. And the garbage recognized by the camera is transferred to the right container through the conveyor belt.
 
+also check this gitlab URL: https://sw-git.chosun.ac.kr/20164338/jjamtong
+
 
 ___
 ***Project Features***
