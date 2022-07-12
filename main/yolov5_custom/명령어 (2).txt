@@ -1,0 +1,31 @@
+train 명령어
+!python train.py --data "./data/custom_dataset.yaml" --cfg "./models/yolov5s.yaml" --weights "yolov5s.pt" --batch 4 --epochs 1
+=> runs/train/exp3에 학습결과 저장
+
+valid 명령어
+!python val.py --data "./data/custom_dataset.yaml" --weights "./runs/train/exp3/weights/best.pt" --workers 2
+=> runs/val/exp에 검증결과 저장
+
+predict 명령어
+!python detect.py --weights "./runs/train/exp/weights/best.pt" -- source "이미지파일 경로"
+python detect.py --weights "./runs/train/exp4/weights/best.pt" --source "./testData" --conf 0.55 --imgsz 480 640    // --imgsz 384 480
+=> runs/detect/exp에 예측결과 저장
+
+압축해제
+!unzip -qq custom_dataset.zip -d ./custom_dataset/
+혹은
+path_to_zip_file = '압축파일 경로'
+directory_to_extract_to = '압축 풀고 저장할 경로'
+
+import zipfile
+with zipfile.ZipFile(path_to_zip_file, 'r') as zip_ref:
+    zip_ref.extractall(directory_to_extract_to)
+이렇게 해야 구글드라이브에 압축이 풀어져서 나중에도 씀
+
+잘 풀렸는지 확인
+import os
+
+path = '/content/drive/MyDrive/경로(폴더까지만)'
+file_list = os.listdir(path)
+
+print(len(file_list))
